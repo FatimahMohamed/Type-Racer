@@ -10,7 +10,7 @@
 <body>
  <header class="typeracer-header">
     <h1>TypeRacer</h1>
-    <button class="instructions-btn">Instructions</button>
+    <button class="instructions-btn" data-bs-toggle="modal" data-bs-target="#instructionsModal">Instructions</button>
   </header>
   <main>
    <div class="container my-4">
@@ -36,8 +36,6 @@
   placeholder="Click the start button to begin the test"
 ></textarea>
 <div class="d-flex justify-content-center gap-2 mb-3">
-  <button class="typeracer-action-btn">Start</button>
-  <button class="typeracer-action-btn">Stop</button>
   <button class="typeracer-action-btn">Retry</button>
 </div>
 </div>
@@ -55,9 +53,34 @@
 </div>
     </div>
   </div>
-  </main>
+  </main>  
 <script src="https://kit.fontawesome.com/c102f16741.js" crossorigin="anonymous"></script>    
 <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.6/dist/js/bootstrap.bundle.min.js" integrity="sha384-j1CDi7MgGQ12Z7Qab0qlWQ/Qqz24Gc6BM0thvEMVjHnfYGF0rmFCozFSxQBxwHKO" crossorigin="anonymous"></script>    
 <script src="assets/javascript/script.js"></script>
+<div class="modal fade" id="instructionsModal" tabindex="-1" aria-labelledby="instructionsModalLabel" aria-hidden="true">
+  <div class="modal-dialog modal-dialog-centered">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h5 class="modal-title" id="instructionsModalLabel">How to Take the Typing Test</h5>
+        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+      </div>
+      <div class="modal-body">
+        <ol>
+          <li><strong>Select Difficulty:</strong> Choose Easy, Medium, or Hard from the dropdown menu to set the test difficulty.</li>
+          <li><strong>Read the Sample Text:</strong> Carefully read the text shown in the box above the typing area.</li>
+          <li><strong>Start Typing:</strong> Click inside the typing area and begin typing the sample text. The timer will start automatically when you type your first character.</li>
+          <li><strong>Real-Time Feedback:</strong> As you type, correctly typed words will be highlighted in <span style="color:#007bff;font-weight:bold;">blue</span> and mistakes in <span style="color:#dc3545;font-weight:bold;">red</span>.</li>
+          <li><strong>Finish the Test:</strong> Press the <kbd>Enter</kbd> key (without holding Shift) to end the test when you are done typing. The typing area will be disabled.</li>
+          <li><strong>View Results:</strong> Your time, words per minute (WPM), and selected difficulty will be displayed in the results area.</li>
+          <li><strong>Retry:</strong> Click the <b>Retry</b> button to take the test again with a new sample text.</li>
+        </ol>
+        <p class="mb-0"><strong>Tip:</strong> Try to type as accurately and quickly as possible for the best score!</p>
+      </div>
+      <div class="modal-footer">
+        <button type="button" class="btn btn-primary" data-bs-dismiss="modal">Got it!</button>
+      </div>
+    </div>
+  </div>
+</div>
 </body>
 </html>
